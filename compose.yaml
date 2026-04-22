@@ -1,0 +1,10 @@
+services:
+  mongodb:
+    image: mongodb
+    build:
+      context: node_modules/mongodb
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: production
+    ports:
+      - 5173:5173

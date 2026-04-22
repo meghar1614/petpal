@@ -1,0 +1,12 @@
+services:
+  mongodb:
+    image: mongodb
+    build:
+      context: node_modules/mongodb
+      dockerfile: ./Dockerfile
+    environment:
+      NODE_ENV: development
+    ports:
+      - 5173:5173
+      - 9229:9229
+    command: ["node", "--inspect=0.0.0.0:9229", "lib/index.js"]
